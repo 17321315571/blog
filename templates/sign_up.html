@@ -1,0 +1,18 @@
+{% extends 'format.html' %}
+{% block content %}
+{% for message in get_flashed_messages() %}<div class="alert-box alert">
+	{{ message }}</div>
+	{% endfor %} 
+<form method="post">
+	<div><br /><br /><br /><br /><center><input type="text" name="username" placeholder="username"style="width: 250px;"></input></center>
+		<center><input type="password" name="password_1" placeholder="password"style="width: 250px;"></input></center>
+		<center><input type="password" name="password_2" placeholder="check password"style="width: 250px;"></input></center>
+		<center><input type="text" name="wechat_id" placeholder="wechat"style="width: 250px;"></input></center>
+		<center><textarea name="introduction" placeholder="introduction"style="width: 250px; height: 100px;"></textarea></center>
+		<center><input type="text" name="check" placeholder="EMAIL CHECK CODE"style="width: 250px;"></input></center>
+	<center><button type="submit">SUBMIT</button>
+	</form><br />
+	<a href="{{ url_for('sign_up_email') }}">还未获取邮箱验证码？请点击获取邮箱验证码</a>
+</div>
+
+{% endblock %}

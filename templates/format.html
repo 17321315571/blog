@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+        <!-- css 文件 -->
+        <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/foundation/5.5.3/css/foundation.min.css">
+        <!-- jQuery 库 -->
+        <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- JavaScript 文件 -->
+        <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/foundation.min.js"></script>
+        <!-- modernizr.js 文件 -->
+        <script src="http://cdn.static.runoob.com/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+	<title>BLOG OF PVGOBSERVER</title>
+	</head>
+  <body>
+
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">WELCOME</a></h1>
+        </li>
+        <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。 
+          如果需要只显示图片，可以删除 "Menu" 文本 -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+    
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          <li class="divider"></li>
+          <li><a href="{{ url_for('plan') }}">PLAN</a></li>
+          <li class="divider"></li>
+          <li><a href="{{ url_for('recent') }}">RECENT</a></li>
+          <li class="divider"></li>
+          <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+          <li class="divider"></li>
+          <li class="has-dropdown">
+            <a>USER</a>
+            <ul class="dropdown">
+              <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+              <li><a href="{{ url_for('sign_up_email') }}">SIGN UP</a></li>
+              <li><a href="{{ url_for('admin') }}">ADMIN</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    
+    <!-- 初始化 Foundation JS -->
+    <script>
+    $(document).ready(function() {
+        $(document).foundation();
+    })
+    </script>
+    
+<div>
+{% block content %} {% endblock %}
+</div>
+</body>
+</html>
